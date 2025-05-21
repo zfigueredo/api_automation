@@ -71,7 +71,7 @@ public class BookingAPI extends APIBase {
         body.put("lastname", booking.getLastname());
         body.put("totalprice", booking.getTotalprice());
         body.put("depositpaid", booking.isDepositpaid());
-        body.put("bookingDates",bookingDates);
+        body.put("bookingdates",bookingDates);
         body.put("additionalneeds", booking.getAdditionalneeds());
 
         return post(BOOKING_ENDPOINT, body);
@@ -80,16 +80,36 @@ public class BookingAPI extends APIBase {
 
 
     public Response updateBooking(int bookingId,Booking booking){
+        Map<String,Object> bookingDates = new HashMap<>();
+        bookingDates.put("checkin", booking.getCheckin());
+        bookingDates.put("checkout", booking.getCheckout());
 
         Map<String, Object> body = new HashMap<>();
         body.put("firstname", booking.getFirstname());
         body.put("lastname", booking.getLastname());
         body.put("totalprice", booking.getTotalprice());
-        body.put("totalprice", booking.getTotalprice());
-        body.put("totalprice", booking.getTotalprice());
-        body.put("totalprice", booking.getTotalprice());
+        body.put("depositpaid", booking.isDepositpaid());
+        body.put("bookingdates",bookingDates);
+        body.put("additionalneeds", booking.getAdditionalneeds());
 
         return put(BOOKING_ENDPOINT+"/"+bookingId,body,token);
+
+    }
+    public Response updateBooking(int bookingId,Booking booking, String _token){
+
+        Map<String,Object> bookingDates = new HashMap<>();
+        bookingDates.put("checkin", booking.getCheckin());
+        bookingDates.put("checkout", booking.getCheckout());
+
+        Map<String, Object> body = new HashMap<>();
+        body.put("firstname", booking.getFirstname());
+        body.put("lastname", booking.getLastname());
+        body.put("totalprice", booking.getTotalprice());
+        body.put("depositpaid", booking.isDepositpaid());
+        body.put("bookingdates",bookingDates);
+        body.put("additionalneeds", booking.getAdditionalneeds());
+
+        return put(BOOKING_ENDPOINT+"/"+bookingId,body,_token);
 
     }
 

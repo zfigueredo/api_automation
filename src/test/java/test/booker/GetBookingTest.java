@@ -4,10 +4,14 @@ import io.restassured.RestAssured;
 import io.restassured.http.ContentType;
 import io.restassured.response.Response;
 import static org.junit.jupiter.api.Assertions.*;
+
+import listeners.ExtentReportExtension;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.extension.ExtendWith;
 
 import static io.restassured.RestAssured.*;
 
+@ExtendWith(ExtentReportExtension.class) //Para que los elementos de los reportes se ejecuten en este test
 public class GetBookingTest {
 
     @Test

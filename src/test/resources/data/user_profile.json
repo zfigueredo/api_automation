@@ -1,0 +1,35 @@
+{
+  "user": {
+    "id": 101,
+    "name": "Karine Ramos",
+    "email": "karine@example.com",
+    "active": true,
+    "address": {
+      "city": "Miami",
+      "zip": "33101",
+      "coordinates": {
+        "lat": 25.7617,
+        "lng": -80.1918
+      }
+    },
+    "orders": [
+      {
+        "orderId": 5001,
+        "status": "delivered",
+        "total": 99.99,
+        "items": [
+          { "productId": 2001, "name": "Book", "quantity": 2 },
+          { "productId": 2002, "name": "Pen", "quantity": 5 }
+        ]
+      },
+      {
+        "orderId": 5002,
+        "status": "pending",
+        "total": 45.50,
+        "items": [
+          { "productId": 2003, "name": "Notebook", "quantity": 3 }
+        ]
+      }
+    ]
+  }
+}
